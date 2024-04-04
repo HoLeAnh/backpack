@@ -10,9 +10,11 @@ let totalSell = 0;
 clear()
 console.log("\n__________START__________\n");
 
-if (document.getElementsByClassName("border-b-2 border-accentBlue")[0].textContent !== 'Market'){
+if (document.getElementsByClassName("border-b-2 border-accentBlue")[3].textContent !== 'Market'){
     console.log(" - Click Market trade")
-    document.getElementsByClassName("border-b-2 border-accentBlue")[0].click()
+    var xpath = "//div[text()='Market']";
+    var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    matchingElement.click()
 }
 
 const Start = async () => {
